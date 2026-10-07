@@ -1,0 +1,13 @@
+package com.key_stones;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class KeyStonesApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(KeyStonesApplication.class, args);
+	}
+
+}
