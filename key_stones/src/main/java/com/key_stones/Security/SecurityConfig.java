@@ -1,3 +1,4 @@
+
 package com.key_stones.Security;
 
 import org.springframework.context.annotation.Bean;
@@ -31,10 +32,12 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .sessionManagement(sm ->
-                sm.sessionCreationPolicy(
-                    SessionCreationPolicy.STATELESS))
+                sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/user_auth/**").permitAll()
+                .requestMatchers("/api/technician/**").permitAll()
+                .requestMatchers("/api/customers/**").permitAll()
+                .requestMatchers("/sites/**").permitAll()
                 .anyRequest().authenticated()
             );
 
